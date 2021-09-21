@@ -1,0 +1,42 @@
+.introduction{
+  width: 100%;
+  float: left;
+}
+
+.textplace{
+  width: 100%;
+  display: flex;
+  padding: 50px 0;
+}
+
+.textplace .section{
+  width: 250px;
+  margin: 0 auto;
+  height: 250px;
+}
+
+.textplace .section h2{
+  color: #34495E;
+}
+
+.textplace .section p{
+  color: #7a7c7f;
+  font-size: 22px;
+  font-family: "Libre Baskerville", serif;
+  line-height: 30px;
+  text-shadow: 0 1px 1px #ffffff;
+  padding-top: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+  .textplace{
+    width: 100%;
+    display: block;
+  }
+
+  .textplace .section{
+    width: 280px;
+    margin: 0 auto;
+    height: 250px;
+  }
+}

@@ -1,0 +1,169 @@
+.ticket-borders{
+ float: left;
+ min-height: 10px;
+ width: 96%;
+ margin: 0 2%;
+}
+
+.tickets{
+  float: left;
+  width: 100%;
+  min-height: 0px;
+  margin-bottom: 1px;
+}
+
+.tickets h3{
+  color: #34495E;
+  width: 90%;
+  margin:	5px auto 0 auto;
+  font-size: 1.5em;
+	letter-spacing: 0.8px;
+}
+
+.tickets .tickets-left-button{
+  width: 30px;
+  margin: 30px 10px 0 0;
+  cursor: pointer;
+  height: 70px;
+  float: left;
+  background: url("images/dark-left-icon.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.tickets .tickets-right-button{
+  width: 30px;
+  margin: 30px 0 0 10px;
+  cursor: pointer;
+  height: 70px;
+  float: left;
+  background: url("images/dark-right-icon.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.tickets .ticket-screen{
+  min-height: 100px;
+  display: flex;
+  float: left;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.tickets .ticket-screen::-webkit-scrollbar {
+  display: none;
+}
+
+.tickets .ticket-screen .ticket{
+  width: 220px;
+  min-height: 220px;
+  margin: 12px 15px 15px 15px;
+  background-color: #E5E7E9;
+  cursor: pointer;
+  float: left;
+  flex: 0 0 auto;
+}
+
+.tickets .ticket-screen .ticket:hover{
+ box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.29), 0 3px 15px 0 rgba(0, 0, 0, 0.29);
+}
+
+.tickets .ticket-screen .ticket .close{
+  display: none;
+}
+
+.tickets .ticket-screen .ticket .close{
+	width: 18px;
+	height: 18px;
+	float: right;
+	border-radius: 10px;
+	border: 1px solid #A93226;
+	background-color: #A93226;
+	margin: -10px -8px -15px 0;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 18px;
+	font-size: 20px;
+	color: #ffffff;
+	transform: rotate(45deg);
+  display: block;
+  cursor: pointer;
+}
+
+.tickets .ticket-screen .ticket .border{
+  width: 200px;
+  min-height: 200px;
+  margin: 10px 9px 10px 9px;
+  float: left;
+  border: 1px dashed #34495E;
+}
+
+.tickets .ticket-screen .ticket .border .description{
+  float: left;
+  width: 90%;
+  margin: 0 5%;
+  font-size: 0.8em;
+  font-variant: small-caps;
+  font-weight: bold;
+  color: #A93226;
+}
+
+.tickets .ticket-screen .ticket .border .data-words{
+  float: left;
+  width: 96%;
+  margin: 0 2%;
+  font-size: 0.9em;
+  text-align: center;
+  color: #34495E;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tickets .ticket-screen .ticket .border .price{
+  float: left;
+  width: 96%;
+  margin: 0 2%;
+  font-size: 1em;
+  font-weight: bold;
+  text-align: center;
+  color: #34495E;
+}
+
+.tickets .ticket-screen .ticket .border .company{
+  float: left;
+  width: 96%;
+  margin: 5px 2% 0 2%;
+  font-size: 0.9em;
+  border-top: 1px solid #34495E;
+  padding: 5px 0;
+  text-align: center;
+  color: #D35400;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tickets .share{
+  float: left;
+  height: 35px;
+  margin-bottom: 10px;
+  border-bottom: 1px dashed #34495E;
+}
+
+.tickets .share .button{
+  float: left;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.tickets .share span{
+  float: left;
+  margin: 0 10px 0 0;
+  color: #34495E;
+  font-size: 25px;
+}

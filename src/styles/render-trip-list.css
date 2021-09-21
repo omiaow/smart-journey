@@ -1,0 +1,103 @@
+.trips{
+  margin-top: 20px;
+	float: right;
+	min-height: 145px;
+  padding: 1px 0;
+  /*overflow: auto;*/
+}
+
+.trips .list{
+  width: 96%;
+  margin: 0 2%;
+}
+
+.trips .list .result{
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #34495E;
+  letter-spacing: 0.2px;
+}
+
+.trips .trip{
+  padding: 10px 0;
+  width: 100%;
+  float: left;
+  min-height: 100px;
+  margin: 10px 0;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  background-color: #E5E7E9;
+}
+
+.trips .trip:hover{
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.29), 0 3px 10px 0 rgba(0, 0, 0, 0.29);
+}
+
+.trips .trip span{
+  font-family: 'Enriqueta', arial, serif;
+  line-height: 1.25;
+  margin: 0 0 15px;
+  letter-spacing: 0.5px;
+  font-size: 20px;
+  color: #34495E;
+}
+
+.trips .trip p{
+  font-family: 'Enriqueta', arial, serif;
+  line-height: 1.25;
+  margin: 10px 0;
+  font-size: 0.9em;
+  color: #A93226;
+}
+
+.trips .trip .price{
+  font-family: 'Enriqueta', arial, serif;
+  line-height: 1.25;
+  font-weight: bold;
+  font-size: 1.5em;
+  color: #34495E;
+  letter-spacing: 0.5px;
+}
+
+.trips .message{
+  width: 100%;
+  height: 160px;
+  float: left;
+  font-weight: bold;
+  font-size: 1.6em;
+  color: #808080;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.trips .message .loading{
+  width: 152px;
+  height: 152px;
+  margin-left: calc(50% - 76px);
+}
+
+.trips .message .loading .loader{
+  border: 16px solid #E5E7E9;
+  border-radius: 50%;
+  border-top: 16px solid #34495E;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.trips .ticket-details{
+  width: 100%;
+}

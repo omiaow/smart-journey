@@ -1,0 +1,203 @@
+.flights .location, .total{
+  color: #34495E;
+  min-width: 1%;
+  float: left;
+  margin: 0px 0 5px 5%;
+  font-size: 1.5em;
+	letter-spacing: 0.8px;
+}
+
+.flights .total{
+  float: right;
+  margin-right: 5%;
+}
+
+.flights .flights-left-button{
+  width: 2%;
+  margin: 0 1% 0 2%;
+  cursor: pointer;
+  height: 70px;
+  float: left;
+  background: url("images/dark-left-icon.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.flights .flights-right-button{
+  width: 2%;
+  margin: 0 2% 0 1%;
+  cursor: pointer;
+  height: 70px;
+  float: left;
+  background: url("images/dark-right-icon.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.flights .ticket-list{
+  min-height: 100px;
+  display: flex;
+  float: left;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.flights .ticket-list::-webkit-scrollbar {
+  display: none;
+}
+
+.flights .ticket-list .daily-list{
+  width: 200px;
+  min-height: 100px;
+  float: left;
+  margin: 0 5px;
+  flex: 0 0 auto;
+  background-color: #E5E7E9;
+	border-radius: 7px;
+  padding: 5px;
+}
+
+.flights .ticket-list .daily-list .header{
+  float: left;
+	width: 100%;
+	height: 80px;
+}
+
+.flights .ticket-list .daily-list .header .day{
+	float: left;
+	width: 30%;
+	color: #34495E;
+  font-size: 55px;
+	font-weight: bold;
+	text-align: center;
+	margin: 5px 0 0 5%;
+}
+
+.flights .ticket-list .daily-list .header .month-weeks{
+	float: left;
+	width: 65%;
+	height: 100%;
+}
+
+.flights .ticket-list .daily-list .header .month-weeks .weekend, .weekday, .month{
+	float: left;
+	width: 80%;
+	color: #922B21;
+  font-size: 18px;
+	font-weight: bold;
+	margin: 5px 0 0 15px;
+  letter-spacing: 0.3px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.flights .ticket-list .daily-list .header .month-weeks .weekday{
+	color: #34495E;
+}
+
+.flights .ticket-list .daily-list .header .month-weeks .month{
+	color: #34495E;
+	margin-top: 13px;
+}
+
+.flights .ticket-list .daily-list .direct-ticket, .nondirect-ticket{
+	float: left;
+	width: 96%;
+	height: 33px;
+	margin: 0 1.5% 5px 1.5%;
+	border-radius: 7px;
+	cursor: pointer;
+	vertical-align: middle;
+	line-height: 33px;
+	border: 1px solid #7EC9A1;
+	color: #34495E;
+  background-color: #ffffff;
+}
+
+.flights .ticket-list .daily-list .nondirect-ticket{
+  border: 1px solid #EC7063;
+}
+
+.flights .ticket-list .daily-list .direct-ticket:hover{
+	background-color: #7EC9A1;
+	color: #ffffff;
+}
+
+.flights .ticket-list .daily-list .direct-ticket .city-name{
+	float: left;
+  font-size: 15px;
+	margin-left: 5%;
+	width: 90%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.flights .ticket-list .daily-list .nondirect-ticket:hover{
+	background-color: #EC7063;
+	color: #ffffff;
+}
+
+.flights .ticket-list .daily-list .nondirect-ticket .city-name{
+	float: left;
+  font-size: 15px;
+	margin-left: 5%;
+	width: 90%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.flights .ticket-list .daily-list .empty{
+	float: left;
+	width: 96%;
+	height: 33px;
+	margin: 0 1.5% 5px 1.5%;
+	border-radius: 7px;
+	vertical-align: middle;
+	line-height: 33px;
+	border: 1px solid #808080;
+	color: #808080;
+  text-align: center;
+}
+
+.flights .color-description{
+	width: 90%;
+  margin: 0 auto;
+	min-height: 35px;
+  overflow: auto;
+}
+
+.flights .color-description .transit{
+	float: left;
+	width: 15px;
+	height: 15px;
+	margin-top: 10px;
+	background-color: #EC7063;
+}
+
+.flights .color-description .direct{
+	float: left;
+	width: 15px;
+	height: 15px;
+	margin-top: 10px;
+	background-color: #7EC9A1;
+}
+
+.flights .color-description span{
+	color: #34495E;
+	min-width: 100px;
+	float: left;
+	margin: 8px 0 0 10px;
+	font-size: 15px;
+	font-weight: bold;
+  font-variant: small-caps;
+	letter-spacing: 0.2px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

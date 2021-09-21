@@ -1,0 +1,26 @@
+.announcement{
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 150px;
+  min-height: 300px;
+  text-align: center;
+}
+
+.announcement h1{
+  font-weight: bold;
+  font-size: 2em;
+  color: #808080;
+  letter-spacing: 0.5px;
+}
+
+.announcement a{
+  font-weight: bold;
+  font-size: 1em;
+  color: #34495E;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+
+.announcement a:hover{
+  text-decoration: underline;
+}
