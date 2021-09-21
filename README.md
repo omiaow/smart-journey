@@ -8,8 +8,6 @@
   </a>
 </p>
 
-<p align="center"><img src="./smart-journey.gif" alt="smart-journey gif" /></p>
-
 #### Tired of searching cheap flight tickets to your trip?
 
 This tool provides an easy way to search the flight tickets and generate or find trips.
