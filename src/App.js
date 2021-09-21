@@ -31,7 +31,7 @@ function App() {
           <footer>
             <img src={skyscanner} alt="skyscanner"/>
             <span>
-              <a href="mailto:omurzak.keldibek@gmail.com" target="_newtab">Email</a>, <a href="https://github.com/omiaow" target="_newtab">Github</a>
+              <a href="mailto:omurzak.keldibek@gmail.com" target="_newtab">Email</a>, <a href="https://github.com/omiaow/smart-journey-public" target="_newtab">Github</a>
             </span>
             <span>&copy; 2021 SmartJourney - Flight Search web application</span>
           </footer>
