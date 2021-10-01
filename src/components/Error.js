@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/announcement.css';
 
-function NotFound() {
+function ErrorPage() {
 
   return(
     <div className="announcement">
@@ -11,4 +11,4 @@ function NotFound() {
   );
 }
 
-export default NotFound;
+export default ErrorPage;

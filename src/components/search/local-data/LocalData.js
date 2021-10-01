@@ -89,6 +89,7 @@ class LocalData extends React.Component {
               regionalData.country.title = this.state.regionalData.country.title;
               regionalData.currency.code = this.state.regionalData.currency.code;
               regionalData.currency.title = this.state.regionalData.currency.title;
+              localStorage.setItem("RegionalData", JSON.stringify(regionalData));
               this.setState({display: false, country: false, currency: false});
             }}>save</button>
 

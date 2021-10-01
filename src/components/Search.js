@@ -18,7 +18,6 @@ class Search extends React.Component {
 
   // update query
   componentDidMount(){
-    console.log(this.props.location);
     this.findFlights(this.props.location.search);
   }
 

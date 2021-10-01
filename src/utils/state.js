@@ -1,4 +1,8 @@
-export let regionalData = {currency: {code: "USD", title: "$"}, country: {code: "US", title: "United States"}};
+let localStorageRegionalData = JSON.parse(localStorage.getItem("RegionalData"));
+
+export let regionalData = (localStorageRegionalData !== null && localStorageRegionalData !== undefined) ?
+  localStorageRegionalData :
+  {currency: {code: "USD", title: "$"}, country: {code: "US", title: "United States"}};
 
 export const weekNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
