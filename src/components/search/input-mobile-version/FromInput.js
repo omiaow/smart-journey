@@ -1,5 +1,7 @@
 import React from 'react';
+
 import CityList from '../../../data/airports.json';
+import {fromInput} from '../../../utils/state';
 
 class AutocompleteFrom extends React.Component {
   constructor(props){
@@ -7,41 +9,27 @@ class AutocompleteFrom extends React.Component {
     this.state = {
       value: "",
       autocompleteLength: 7,
-      placeholder: "",
-      id: "",
-      url: ""
+      locs: []
     };
   }
 
-  // update input by url
+  // update by localStorage
   componentDidMount(){
-    this.changeData();
+    this.setState({locs: fromInput.value});
   }
 
+  // update by url query
   componentDidUpdate(){
-    this.changeData();
-  }
-
-  changeData(){
-    if(this.state.url !== window.location.search){
-      const queryString = require('query-string');
-      const parsed = queryString.parse(window.location.search);
-      if(parsed.Origin !== undefined){
-        let id = parsed.Origin.split(' ')[0];
-        let i=0;
-        while(i<CityList.length && `${CityList[i].id}` !== `${id}`) i++;
-        let city = "";
-        if(i<CityList.length){
-          city = CityList[i].loc;
-        }
-        this.setState({url: window.location.search, placeholder: city, value: "", id: id});
-      }
+    if(this.state.locs.length > 0 && JSON.stringify(fromInput.value) !== JSON.stringify(this.state.locs)){
+      this.setState({locs: fromInput.value});
     }
   }
 
   // choosing option
-  choose = (city, id) => {
-    this.setState({placeholder: city, value: "", id: id});
+  choose = (newLocs) => {
+    fromInput.value = [newLocs];
+    localStorage.setItem("Origin", JSON.stringify([newLocs]));
+    this.setState({locs: [newLocs]});
     this.props.changeInput("toInput");
   }
 
@@ -68,7 +56,7 @@ class AutocompleteFrom extends React.Component {
           if(city.includes("&#039;")){
             city = (`${city.slice(0, city.indexOf("&#039;"))}'${city.slice((city.indexOf("&#039;")+6), city.length)}`);
           }
-            list.push(<div className="autocomplete-tag" key={j} onClick={this.choose.bind(null, city, CityList[i].id)}> {city} </div>);
+            list.push(<div className="autocomplete-tag" key={j} onClick={this.choose.bind(null, CityList[i])}> {city} </div>);
           j++;
         }else if(j >= this.state.autocompleteLength){
           i=CityList.length;
@@ -87,8 +75,8 @@ class AutocompleteFrom extends React.Component {
       <>
         <div className="from" onClick={() => this.props.changeInput("fromInput")}>
           <h2 data-testid="h2">from</h2>
-          <p data-testid="p">{(this.state.placeholder.length > 0) ? (this.state.placeholder) : ("From where? (city, countries)")}</p>
-          <input type="hidden" id="Origin" name="Origin" value={this.state.id}/>
+          <p data-testid="p">{(this.state.locs.length > 0) ? (this.state.locs[0].loc) : ("From where? (city, countries)")}</p>
+          <input type="hidden" id="Origin" name="Origin" value={(this.state.locs.length > 0) ? this.state.locs[0].id : ""}/>
         </div>
 
         {(this.props.displayInput) ? (
@@ -99,7 +87,7 @@ class AutocompleteFrom extends React.Component {
                    className="from-input"
                    autoComplete="nope"
                    type="text"
-                   placeholder={(this.state.placeholder.length > 0) ? (this.state.placeholder) : ("city, countries")}
+                   placeholder={(this.state.locs.length > 0) ? (this.state.locs[0].loc) : ("city, countries")}
                    onChange={(e) => this.setState({value: e.target.value})}
                    value={this.state.value}
                    autoFocus/>

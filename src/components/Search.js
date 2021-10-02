@@ -5,7 +5,8 @@ import SearchTool from './search/SearchTool';
 import Result from './result/Result';
 
 import {flightsCall} from '../api/flightsCall';
-import {regionalData} from '../utils/state';
+import {regionalData, fromInput} from '../utils/state';
+import cityList from '../data/airports.json';
 
 class Search extends React.Component {
 
@@ -27,6 +28,17 @@ class Search extends React.Component {
 
   // running flightsCall function to collect flights
   findFlights(query){
+
+    function findCity(idList){
+      let value = [];
+      idList.forEach( item => {
+        let i=0;
+        while(i < cityList.length && `${cityList[i].id}` !== `${item}`) i++;
+        if(i < cityList.length) value.push(cityList[i]);
+      });
+      return value;
+    }
+
     if(this.state.query !== query && query.length > 0){
 
       const queryString = require('query-string');
@@ -45,6 +57,8 @@ class Search extends React.Component {
         regionalData.country.title = parsed.countryTitle;
         regionalData.currency.code = parsed.currencyCode;
         regionalData.currency.title = parsed.currencyTitle;
+
+        fromInput.value = findCity([origin]);
 
         this.setState({ query: query, data: [], myLocation: origin, fromDate: new Date(fromDate) });
 

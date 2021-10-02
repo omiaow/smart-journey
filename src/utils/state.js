@@ -4,6 +4,11 @@ export let regionalData = (localStorageRegionalData !== null && localStorageRegi
   localStorageRegionalData :
   {currency: {code: "USD", title: "$"}, country: {code: "US", title: "United States"}};
 
+let localStorageOrigin = JSON.parse(localStorage.getItem("Origin"));
+
+export let fromInput = (localStorageOrigin !== null && localStorageOrigin !== undefined) ?
+  {value: localStorageOrigin} : {value: []};
+
 export const weekNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
 export const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];

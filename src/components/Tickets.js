@@ -6,7 +6,8 @@ import SearchTool from './search/SearchTool';
 import RenderTickets from './result/features/RenderTickets';
 
 import {ticketsCall} from '../api/ticketsCall';
-import {regionalData} from '../utils/state';
+import {regionalData, fromInput} from '../utils/state';
+import cityList from '../data/airports.json';
 
 class Tickets extends React.Component {
 
@@ -25,6 +26,17 @@ class Tickets extends React.Component {
 
   // running flightsCall function to collect tickets
   componentDidMount(){
+
+    function findCity(idList){
+      let value = [];
+      idList.forEach( item => {
+        let i=0;
+        while(i < cityList.length && `${cityList[i].id}` !== `${item}`) i++;
+        if(i < cityList.length) value.push(cityList[i]);
+      });
+      return value;
+    }
+
     let query = this.props.location.search;
     const queryString = require('query-string');
     const parsed = queryString.parse(query);
@@ -33,10 +45,14 @@ class Tickets extends React.Component {
        parsed.from !== undefined && parsed.to !== undefined && parsed.date !== undefined && new Date().getTime() < new Date(parsed.date[0]) &&
        parsed.Origin !== undefined && parsed.Destinations !== undefined && parsed.fromDate !== undefined && parsed.toDate !== undefined){
 
+         const origin = parsed.Origin.split(' ')[0];
+
          regionalData.country.code = parsed.countryCode;
          regionalData.country.title = parsed.countryTitle;
          regionalData.currency.code = parsed.currencyCode;
          regionalData.currency.title = parsed.currencyTitle;
+
+         fromInput.value = findCity([origin]);
 
          ticketsCall(parsed, this.update);
 

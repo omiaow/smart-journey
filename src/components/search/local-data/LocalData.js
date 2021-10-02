@@ -16,6 +16,14 @@ class LocalData extends React.Component {
     }
   }
 
+  componentDidMount(){
+    if(localStorage.getItem("RegionalData") === null || localStorage.getItem("RegionalData") === undefined){
+      setTimeout(() => {
+        this.setState({display: true});
+      }, 1500);
+    }
+  }
+
   // listing countries
   renderCountries(list){
     let options = [];

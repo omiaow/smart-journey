@@ -1,5 +1,7 @@
 import React from 'react';
+
 import CityList from '../../../data/airports.json';
+import {fromInput} from '../../../utils/state';
 
 class AutocompleteFrom extends React.Component {
 
@@ -10,33 +12,18 @@ class AutocompleteFrom extends React.Component {
     focuse: false,
     options: [],
     optionLimit: 8,
-    active: -1,
-    url: ""
+    active: -1
   }
 
-  // update input by url
+  // update by localStorage
   componentDidMount(){
-    this.changeData();
+    this.setState({locs: fromInput.value});
   }
 
+  // update by url query
   componentDidUpdate(){
-    this.changeData();
-  }
-
-  changeData(){
-    if(this.state.url !== window.location.search){
-      const queryString = require('query-string');
-      const parsed = queryString.parse(window.location.search);
-      if(parsed.Origin !== undefined){
-        let id = parsed.Origin.split(' ')[0];
-        let i=0;
-        while(i<CityList.length && `${CityList[i].id}` !== `${id}`) i++;
-        let city = [];
-        if(i<CityList.length){
-          city.push(CityList[i]);
-        }
-        this.setState({url: window.location.search, locs: city, value: "", options: []});
-      }
+    if(this.state.locs.length > 0 && JSON.stringify(fromInput.value) !== JSON.stringify(this.state.locs)){
+      this.setState({locs: fromInput.value});
     }
   }
 
@@ -94,6 +81,8 @@ class AutocompleteFrom extends React.Component {
     });
     if(check){
       this.state.locs.push(this.state.options[optionId]);
+      fromInput.value = this.state.locs;
+      localStorage.setItem("Origin", JSON.stringify(this.state.locs));
       this.setState({locs: this.state.locs, value: "", options: []});
     }else this.setState({value: "", options: []});
   }
@@ -137,7 +126,7 @@ class AutocompleteFrom extends React.Component {
         <h4>from</h4>
         <div className="autocomplete">
           <div className="from-tag">
-          
+
             {this.showTags()}
 
 						<input
@@ -149,7 +138,7 @@ class AutocompleteFrom extends React.Component {
               onChange={(e) => (this.state.locs.length >= this.state.limit) ? "" : this.findOptions(e.target.value)}
               onKeyDown={(e) => this.keyDown(e.keyCode)}
               onFocus={() => this.setState({focuse: true})}
-              onBlur={() => setTimeout(() => this.setState({focus: false}), 250)}
+              onBlur={() => setTimeout(() => this.setState({focuse: false}), 250)}
             />
 
             <input type="hidden" id="Origin" name="Origin" value={this.getInputValue()}/>
