@@ -1,3 +1,5 @@
+import cityList from '../data/airports.json';
+
 let localStorageRegionalData = JSON.parse(localStorage.getItem("RegionalData"));
 
 export let regionalData = (localStorageRegionalData !== null && localStorageRegionalData !== undefined) ?
@@ -16,6 +18,12 @@ export const monthNames = ["January", "February", "March", "April", "May", "June
 export const shortWeekNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
 export const shortMonthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
+
+export function findCity(id){
+  let i=0;
+  while(i < cityList.length && `${cityList[i].id}` !== `${id}`) i++;
+  if(i < cityList.length) return cityList[i];
+}
 
 // sorts the lists by price
 export function sortPrices(list){

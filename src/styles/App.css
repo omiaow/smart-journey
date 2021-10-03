@@ -14,7 +14,7 @@ body{
   height: 100vh;
   display: flex;
   flex-direction: column;
-  max-width: 1800px;
+  max-width: 3000px;
   margin: 0 auto 0 auto;
 }
 

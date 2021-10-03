@@ -18,15 +18,15 @@ function Home() {
         <div className="textplace">
           <div className="section">
             <h2>Multi-city searching</h2>
-            <p>You can search flights for multiple cities specifying just your vacation dates.</p>
+            <p>Search flights for multiple cities specifying just destinations and vacation dates.</p>
           </div>
           <div className="section">
-            <h2>Create your trip</h2>
-            <p>Select destinations and dates, and create trip by looking all possible options.</p>
+            <h2>Create trip</h2>
+            <p>Generate a trip by selecting a flight from the search results and see the total cost.</p>
           </div>
           <div className="section">
-            <h2>Find your trip</h2>
-            <p>Find trip by fast searching function, which shows the cheapest possible trip.</p>
+            <h2>Find trip</h2>
+            <p>Select city(s) and number of nights you plan to stay for and find the cheapest trip.</p>
           </div>
         </div>
       </div>

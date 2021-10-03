@@ -3,12 +3,12 @@ import '../../../styles/render-flights.css';
 
 import Tickets from './RenderTickets';
 
-import {weekNames, monthNames, regionalData} from '../../../utils/state';
+import {weekNames, monthNames, regionalData, findCity} from '../../../utils/state';
 
 class Flights extends React.Component {
 
   /* using "window.innerWidth" to set the style for individual device */
-  
+
   state = {
     daysWidth: 220,
     data: undefined,
@@ -133,11 +133,14 @@ class Flights extends React.Component {
       }
     }
 
+    let firstLocation = findCity(this.state.initialLocation);
+    let firstLocationName = (firstLocation !== undefined) ? firstLocation.loc.split(',')[0] : "Trip";
+
     return (
       <>
         {/* description part */}
         <div className="header">
-          <h2 className="location">{(this.state.tickets.length > 0) ? this.state.tickets[this.state.tickets.length-1].destination.city : "Trip"} to</h2>
+          <h2 className="location">{(this.state.tickets.length > 0) ? this.state.tickets[this.state.tickets.length-1].destination.city : firstLocationName} to</h2>
           {(this.state.total > 0) ?
              <h2 className="total">Total: {this.state.total} {regionalData.currency.title}</h2> : ""}
         </div>
