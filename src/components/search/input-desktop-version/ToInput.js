@@ -148,12 +148,12 @@ class AutocompleteTo extends React.Component {
               onChange={(e) => (this.state.locs.length >= this.state.limit) ? "" : this.findOptions(e.target.value)}
               onKeyDown={(e) => this.keyDown(e.keyCode)}
               onFocus={() => this.setState({focuse: true})}
-              onBlur={() => setTimeout(() => this.setState({focus: false}), 250)}
+              onBlur={() => setTimeout(() => this.setState({focuse: false}), 250)}
             />
 
             {this.getInputValue()}
             {this.showOptions()}
-            
+
 					</div>
         </div>
       </div>
