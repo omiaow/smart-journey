@@ -12,8 +12,7 @@ class AutocompleteFrom extends React.Component {
     focuse: false,
     options: [],
     optionLimit: 8,
-    active: -1,
-    url: ""
+    active: -1
   }
 
   // update by localStorage
@@ -23,8 +22,8 @@ class AutocompleteFrom extends React.Component {
 
   // update by url query
   componentDidUpdate(){
-    if(this.state.url !== window.location.search){
-      this.setState({locs: fromInput.value, url: window.location.search});
+    if(this.state.locs.length > 0 && JSON.stringify(fromInput.value) !== JSON.stringify(this.state.locs)){
+      this.setState({locs: fromInput.value});
     }
   }
 
