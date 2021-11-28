@@ -43,7 +43,7 @@ Try the application [SmartJourney](https://smartjourney.netlify.app/).
 
 ## RIP my first best project (May 2021 - 2 November 2021)! 💐😔
 As of 2 November 2021, the Skyscanner API endpoint is no longer available to RapidAPI service (as confirmed via email from RapidAPI team).\
-After this experience, I wanna advise for developers to build their lovely app with no any unstable dependencies like shared someone's API.
+After this experience, I wanna advise for developers to build your lovely app with no any unstable dependencies like someones shared API.
 
 <hr>
 <p align="center">

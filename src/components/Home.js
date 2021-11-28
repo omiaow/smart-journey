@@ -1,9 +1,65 @@
 import React from 'react';
+import TSForm from 'thoughts-storage-form';
 import "../styles/introduction.css";
 
 import SearchTool from './search/SearchTool';
 
 function Home() {
+  let jsonForm = {
+    "_id": "61a27bf283a65ea167bba3c8",
+    "name": "Feedback",
+    "listOfForms": [
+      {
+        "isImportant": false,
+        "name": "radio",
+        "title": "How would you rate your experience?",
+        "options": [
+          {
+            "isTrue": false,
+            "title": "Excellent"
+          },
+          {
+            "isTrue": false,
+            "title": "Good"
+          },
+          {
+            "isTrue": false,
+            "title": "Normal"
+          },
+          {
+            "isTrue": false,
+            "title": "Bad"
+          },
+          {
+            "isTrue": false,
+            "title": "Worst"
+          }
+        ]
+      },
+      {
+        "isImportant": false,
+        "name": "paragraph",
+        "title": "Tell us about your experience:",
+        "text": ""
+      },
+      {
+        "isImportant": false,
+        "name": "radio",
+        "title": "Do you wanna use this website in the future?",
+        "options": [
+          {
+            "isTrue": false,
+            "title": "Yes"
+          },
+          {
+            "isTrue": false,
+            "title": "No"
+          }
+        ]
+      }
+    ]
+  }
+
   return (
     <>
       {/* searching form */}
@@ -30,6 +86,8 @@ function Home() {
           </div>
         </div>
       </div>
+
+      <TSForm form={jsonForm}/>
     </>
   );
 }
