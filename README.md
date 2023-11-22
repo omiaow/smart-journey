@@ -10,13 +10,9 @@
 
 #### Tired of searching cheap flight tickets to your trip?
 
-This tool provides an easy way to search the flight tickets and generate or find trips.
-
 ## 🚀 Demo
 
 Try the application [SmartJourney](https://smartjourney.netlify.app/).
-
-#### Project currently under testing process with Jest JavaScript Testing framework.
 
 ## Features
 
@@ -25,8 +21,6 @@ Try the application [SmartJourney](https://smartjourney.netlify.app/).
 - **Create trip** - Select destinations and dates, and create your own trip by looking all possible options.
 
 - **Find trip** - Find trip by fast searching function, which shows the cheapest possible trip.
-
-**Etc...**
 
 ## Future plan
 
